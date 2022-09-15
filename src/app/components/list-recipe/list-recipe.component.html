@@ -1,1 +1,15 @@
-<p>list-recipe works!</p>
+<p [ngStyle]="{'font-size':'24px', 'font-style':'bold'}">Recipe results</p>
+<table>
+    <thead>
+        <tr>
+            <td>id</td>
+            <td>title</td>
+            <td>image</td>
+    </tr>
+    </thead>
+    <tr *ngFor="let recipe of recipeList; let i = index">
+            <td>{{recipe.id}}</td>
+            <td>{{recipe.title}}</td>
+            <td>{{recipe.image}}</td>
+    </tr>
+</table>

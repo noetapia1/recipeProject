@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { Result } from 'src/app/interfaces/results';
 
 @Component({
   selector: 'app-list-recipe',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListRecipeComponent implements OnInit {
 
+
+  @Input() recipeList:Result[]=[];
   constructor() { }
 
   ngOnInit(): void {

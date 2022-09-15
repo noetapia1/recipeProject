@@ -1,1 +1,59 @@
-<p>filter-recipe works!</p>
+<p>Search your favorite recipe using below categories</p>
+<form (ngSubmit)="getRecipeList(form)" #form="ngForm">
+    <label for="queryIn">Search (free text):</label>
+    <input type="text" id="queryIn" name="queryIn" [(ngModel)]="query">
+
+    <label for="cuisineIn">Cuisine:</label>
+    <select type="text" id="cuisineIn" name="cuisineIn" [(ngModel)]="cuisine">
+        <option value="">Chose a cuisine...</option>
+        <option>African</option>
+        <option>American</option>
+        <option>British</option>
+        <option>Cajun</option>
+        <option>Caribbean</option>
+        <option>Chinese</option>
+        <option>Eastern European</option>
+        <option>European</option>
+        <option>French</option>
+        <option>German</option>
+        <option>Greek</option>
+        <option>Indian</option>
+        <option>Irish</option>
+        <option>Italian</option>
+        <option>Japanese</option>
+        <option>Jewish</option>
+        <option>Korean</option>
+        <option>Latin American</option>
+        <option>Mediterranean</option>
+        <option>Mexican</option>
+        <option>Middle Eastern</option>
+        <option>Nordic</option>
+        <option>Southern</option>
+        <option>Spanish</option>
+        <option>Thai</option>
+        <option>Vietnamese</option>
+      </select>
+
+    <label for="typeIn">Select a type of dish:</label>
+    <select type="text" id="typeIn" name="typeIn" [(ngModel)]="dishType">
+        <option value="">Select a category...</option>
+        <option>main course</option>
+        <option>side dish</option>
+        <option>dessert</option>
+        <option>appetizer</option>
+        <option>salad</option>
+        <option>bread</option>
+        <option>breakfast</option>
+        <option>soup</option>
+        <option>beverage</option>
+        <option>sauce</option>
+        <option>marinade</option>
+        <option>fingerfood</option>
+        <option>snack</option>
+        <option>drink</option>
+    </select>
+    <button type="submit">Get recipes</button>
+</form>
+
+<!-- <h3><button (click)="getRecipeList()">Get recipes</button></h3>  -->
+<app-list-recipe [recipeList]="recipeResults"></app-list-recipe>
