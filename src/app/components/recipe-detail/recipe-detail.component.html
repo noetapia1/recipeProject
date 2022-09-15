@@ -1,1 +1,44 @@
-<p>recipe-detail works!</p>
+<div *ngIf="recipe">
+    <h2>{{recipe.title}}</h2>
+    <img *ngIf="recipe.image" [src]="recipe.image"/>
+    <br/>
+    <table>
+        <tr>
+            <td>{{recipe.servings}} servings</td>
+            <td>ready in {{recipe.readyInMinutes}} minutes</td>
+        </tr>
+    </table>
+    <br/>
+    <p>{{recipe.summary}}</p>
+    <br/>
+
+    <h4>Ingredients</h4>
+    <ul class="list-group list-group-numbered">
+        <ng-container *ngIf="recipe.extendedIngredients">
+        <li class="list-group-item" *ngFor="let ingredient of recipe.extendedIngredients">
+            <img [src]="getIngredientImageUrl(ingredient.image)"/> {{ingredient.amount}}  {{ingredient.unit}} {{ingredient.name}}</li>
+        </ng-container>
+    </ul>
+ <table>
+    <tr>
+        <td>is dairy free?</td>
+        <td>{{recipe.dairyFree}</td>
+    </tr>
+    <tr>
+        <td>is gluten free?</td>
+        <td>{{recipe.glutenFree}}</td>
+    </tr>
+    <tr>
+        <td>is keto?</td>
+        <td>{{recipe.ketogenic}}</td>
+    </tr>
+    <tr>
+        <td>is vegetarian?</td>
+        <td>{{recipe.vegetarian}</td>
+    </tr>
+</table>       
+
+<br/>
+<h4>Instructions:</h4>
+<p>See the detailed instructions on: {{recipe.sourceUrl}}</p>
+</div>

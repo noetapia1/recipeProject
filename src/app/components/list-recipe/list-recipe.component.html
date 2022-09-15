@@ -2,14 +2,14 @@
 <table>
     <thead>
         <tr>
-            <td>id</td>
-            <td>title</td>
+            <td>Recipe</td>
             <td>image</td>
+            <td></td>
     </tr>
     </thead>
     <tr *ngFor="let recipe of recipeList; let i = index">
-            <td>{{recipe.id}}</td>
-            <td>{{recipe.title}}</td>
-            <td>{{recipe.image}}</td>
+            <td><a [routerLink]="['/recipeDetail', recipe.id]">{{recipe.title}}</a></td>
+            <td><img *ngIf="recipe.image" [src]="recipe.image"></td>
+            <td>Add to favorites</td>
     </tr>
 </table>
