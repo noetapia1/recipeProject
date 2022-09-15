@@ -1,0 +1,7 @@
+<div *ngIf="recipeResults.length > 0">
+<p>Favorite recipes</p>
+<app-list-recipe  [recipeList]="recipeResults" [favoriteView]="true"></app-list-recipe>
+</div>
+<div *ngIf="recipeResults.length <= 0">
+    <p>You don't have any favorite recipe yet</p>
+</div>

@@ -7,7 +7,8 @@ export const environment = {
   apiKey:'cda6e1c260664058adf2cae17bb3c715',
   recipeSearch:'https://api.spoonacular.com/recipes/complexSearch',
   recipeDetailSearch: (id:string) => `https://api.spoonacular.com/recipes/${id}/information`,
-  randomRecipeSearch:'https://api.spoonacular.com/recipes/random'
+  randomRecipeSearch:'https://api.spoonacular.com/recipes/random',
+  dbUrl:'https://recipedb-35df.restdb.io/rest/recipe'
 };
 
 /*

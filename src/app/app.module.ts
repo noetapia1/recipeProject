@@ -9,13 +9,17 @@ import { FilterRecipeComponent } from './components/filter-recipe/filter-recipe.
 import { ListRecipeComponent } from './components/list-recipe/list-recipe.component';
 import { ApiInterceptor } from './interceptors/api.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeDetailComponent,
     FilterRecipeComponent,
-    ListRecipeComponent
+    ListRecipeComponent,
+    FavoritesComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

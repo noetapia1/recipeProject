@@ -2,12 +2,50 @@
     <h2>{{recipe.title}}</h2>
     <img *ngIf="recipe.image" [src]="recipe.image"/>
     <br/>
+
+    <p>{{recipe.servings}} servings, ready in {{recipe.readyInMinutes}} minutes</p>
+
     <table>
         <tr>
-            <td>{{recipe.servings}} servings</td>
-            <td>ready in {{recipe.readyInMinutes}} minutes</td>
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="dairyCheck" disabled [checked]="recipe.dairyFree?'checked':null">
+                    <label class="form-check-label" for="dairyCheck">
+                      Dairy free
+                    </label>
+                  </div>
+                  
+            </td>
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="glutenCheck" disabled [checked]="recipe.glutenFree?'checked':null">
+                    <label class="form-check-label" for="glutenCheck">
+                      Gluten free
+                    </label>
+                  </div>
+                  
+            </td>
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="vegCheck" disabled [checked]="recipe.vegetarian?'checked':null">
+                    <label class="form-check-label" for="vegCheck">
+                      Vegetarian
+                    </label>
+                  </div>
+                  
+            </td>
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="ketoCheck" disabled [checked]="recipe.ketogenic?'checked':null">
+                    <label class="form-check-label" for="ketoCheck">
+                      Keto diet
+                    </label>
+                  </div>
+                  
+            </td>
         </tr>
     </table>
+
     <br/>
     <p>{{recipe.summary}}</p>
     <br/>
@@ -18,27 +56,8 @@
         <li class="list-group-item" *ngFor="let ingredient of recipe.extendedIngredients">
             <img [src]="getIngredientImageUrl(ingredient.image)"/> {{ingredient.amount}}  {{ingredient.unit}} {{ingredient.name}}</li>
         </ng-container>
-    </ul>
- <table>
-    <tr>
-        <td>is dairy free?</td>
-        <td>{{recipe.dairyFree}</td>
-    </tr>
-    <tr>
-        <td>is gluten free?</td>
-        <td>{{recipe.glutenFree}}</td>
-    </tr>
-    <tr>
-        <td>is keto?</td>
-        <td>{{recipe.ketogenic}}</td>
-    </tr>
-    <tr>
-        <td>is vegetarian?</td>
-        <td>{{recipe.vegetarian}</td>
-    </tr>
-</table>       
-
+    </ul> 
 <br/>
 <h4>Instructions:</h4>
-<p>See the detailed instructions on: {{recipe.sourceUrl}}</p>
+<p>See the detailed instructions on:<a [href]="recipe.sourceUrl" target="_blank">{{recipe.sourceName}}</a> </p>
 </div>
