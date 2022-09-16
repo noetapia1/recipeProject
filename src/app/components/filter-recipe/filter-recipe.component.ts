@@ -27,12 +27,14 @@ export class FilterRecipeComponent implements OnInit {
     this.service.getFilteredRecipes(this.query, this.cuisine, this.dishType).subscribe((data)=>{
       this.recipeResults = data;
     });
-    console.log("query {}, cuisine{}, type{}", this.query, this.cuisine, this.dishType);
     form.resetForm();
     this.query="";
     this.cuisine="";
     this.dishType="";
   }
 
+  deletedTask(){
+    
+  }
 
 }

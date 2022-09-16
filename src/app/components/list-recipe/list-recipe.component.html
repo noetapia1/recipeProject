@@ -1,9 +1,9 @@
-<p [ngStyle]="{'font-size':'24px', 'font-style':'bold'}">Recipe results</p>
+<p *ngIf="recipeList.length > 0" [ngStyle]="{'font-size':'24px', 'font-style':'bold'}">Recipe results</p>
 <table>
     <thead>
         <tr>
             <td>Recipe</td>
-            <td>image</td>
+            <td></td>
             <td></td>
     </tr>
     </thead>
@@ -14,3 +14,5 @@
             <td *ngIf="favoriteView"><button (click)="removeRecipeFromFavorites(recipe)">Remove from Favorites</button></td>
     </tr>
 </table>
+
+<p *ngIf="recipeList.length <= 0" [ngStyle]="{'font-size':'24px', 'font-style':'bold'}">No recipes found!!!</p>
