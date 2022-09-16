@@ -8,6 +8,7 @@ export interface RecipeResults {
 }
 
 export interface Result {
+    _id: number;
     id:        number;
     title:     string;
     image:     string;

@@ -10,12 +10,14 @@ import { FavoriteService } from 'src/app/service/favorite.service';
 export class FavoritesComponent implements OnInit {
 
 
-  favoriteView:boolean = true;
   recipeResults:Result[] = [];
   constructor(private service:FavoriteService) { }
 
   ngOnInit(): void {
-    this.recipeResults = this.service.getFavorites();
+    this.service.getFavorites().subscribe(
+      (data) =>{
+        this.recipeResults = data;
+      });
   }
 
 }

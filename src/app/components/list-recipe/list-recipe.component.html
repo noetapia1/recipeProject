@@ -11,6 +11,6 @@
             <td><a [routerLink]="['/recipeDetail', recipe.id]">{{recipe.title}}</a></td>
             <td><img *ngIf="recipe.image" [src]="recipe.image"></td>
             <td *ngIf="!favoriteView"><button (click)="addRecipeToFavorites(recipe)">Add to Favorites</button></td>
-            <td *ngIf="favoriteView"><button (click)="removeRecipeFromFavorites(i)">Remove from Favorites</button></td>
+            <td *ngIf="favoriteView"><button (click)="removeRecipeFromFavorites(recipe)">Remove from Favorites</button></td>
     </tr>
 </table>

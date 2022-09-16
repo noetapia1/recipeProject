@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { Result } from 'src/app/interfaces/results';
 import { FavoriteService } from 'src/app/service/favorite.service';
+import { RecipeService } from 'src/app/service/recipe.service';
 
 @Component({
   selector: 'app-list-recipe',
@@ -12,17 +13,17 @@ export class ListRecipeComponent implements OnInit {
 
   @Input() recipeList:Result[]=[];
   @Input() favoriteView:boolean = false;
-  constructor(private service:FavoriteService) { }
+  constructor(private service:FavoriteService, private recipeService:RecipeService) { }
 
   ngOnInit(): void {
   }
 
   addRecipeToFavorites(recipe:Result){
-    this.service.addRecipeToFavoritelist(recipe);
+    this.service.addRecipeToFavoritelist(recipe).subscribe(rece =>{});
   }
 
-  removeRecipeFromFavorites(id:number){
-    this.service.removeRecipe(id);
+  removeRecipeFromFavorites(recipe:Result){
+    this.service.removeRecipe(recipe._id).subscribe();
   }
 
 }

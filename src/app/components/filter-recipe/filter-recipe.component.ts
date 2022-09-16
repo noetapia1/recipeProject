@@ -11,7 +11,6 @@ import { NgForm } from '@angular/forms';
 })
 export class FilterRecipeComponent implements OnInit {
 
-  favoriteView:boolean = false;
   recipeResults:Result[] = [];
   constructor(private service:RecipeService, private route:ActivatedRoute, private router:Router) { }
 
